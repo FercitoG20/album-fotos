@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Álbum para Mi Amor</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Animación de la carta -->
+  <div id="envelope" class="envelope" onclick="openEnvelope()">
+    <div class="flap flap-top"></div>
+    <div class="flap flap-bottom"></div>
+    <div class="body"></div>
+  </div>
+
+  <!-- Mensaje de aniversario -->
+  <div id="anniversaryMessage" class="message-container">
+    <div class="message">
+      <p id="messageText">¡Feliz Año 3 meses te amo 💖</p>
+    </div>
+  </div>
+
+  <!-- Álbum -->
+  <div class="album" id="album" style="display: none;">
+    <header>
+      <h1>Unos recuerditos My love❤️</h1>
+      <p>Un álbum lleno de momentos especiales contigo.</p>
+    </header>
+
+    <div class="photo-gallery">
+      <div class="photo" onclick="openLightbox(0)">
+        <img src="Foto MF 1.jpg" alt="Nosotros en la playa">
+        <p>Simplemente tú y yo.</p>
+      </div>
+      <div class="photo" onclick="openLightbox(1)">
+        <img src="Foto MF 2.jpg" alt="Cena romántica">
+        <p>Un día de felicidad. 🍷✨</p>
+      </div>
+      <div class="photo" onclick="openLightbox(2)">
+        <img src="Foto MF 3.jpg" alt="Nosotros en el parque">
+        <p>Risas y felicidad. 🌳💖</p>
+      </div>
+      <div class="photo" onclick="openLightbox(3)">
+        <img src="Foto MF 4.jpg" alt="Paseo juntos">
+        <p>Un día muy bonito. 💕</p>
+      </div>
+    </div>
+
+    <p>Gracias por todo mi vida SIEMPRE voy a estar para ti nunca lo dudes.</p>
+    <p>Gracias por aguantarme todooo que yo se que no es facil</p>
+    <p>TE AMO 💕</p>
+    <footer>
+      <button onclick="toggleMusic()">🎵 Reproducir / Pausar Canción</button>
+      <audio id="background-music" loop>
+        <source src="Buscandonos.mp3" type="audio/mpeg">
+        Tu navegador no soporta reproducción de audio.
+      </audio>
+    </footer>
+  </div>
+
+  <!-- Lightbox para las fotos -->
+  <div class="lightbox" id="lightbox" style="display: none;">
+    <div class="lightbox-content">
+      <span class="close" onclick="closeLightbox()">&times;</span>
+      <img id="lightbox-img" src="" alt="Foto ampliada">
+      <p id="lightbox-caption"></p>
+      <button class="prev" onclick="navigateLightbox(-1)">&#10094;</button>
+      <button class="next" onclick="navigateLightbox(1)">&#10095;</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

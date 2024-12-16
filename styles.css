@@ -1,0 +1,213 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    color: #444;
+    text-align: center;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+/* Estilos para el álbum */
+.album {
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: none;
+}
+
+header {
+    padding: 20px;
+    background: #ff6b81;
+    color: white;
+    border-bottom: 5px solid #ff9a9e;
+}
+
+header h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1em;
+}
+
+.photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.photo {
+    width: 200px;
+    cursor: pointer;
+    position: relative;
+}
+
+.photo img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.photo p {
+    margin-top: 8px;
+    font-size: 0.9em;
+    color: #444;
+}
+
+footer {
+    padding: 20px;
+    background: #ff9a9e;
+    color: white;
+}
+
+/* Estilos para la carta */
+.envelope {
+    width: 350px;
+    height: 230px;
+    background: linear-gradient(145deg, #f7d1d1, #fbd4b5);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s ease-out;
+    overflow: hidden;
+}
+
+.flap {
+    background: #ffffff;
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+}
+
+.flap-top {
+    transform-origin: top;
+    transition: transform 0.4s ease-out;
+}
+
+.flap-bottom {
+    bottom: 0;
+    transform-origin: bottom;
+    transition: transform 0.4s ease-out;
+}
+
+.body {
+    background: #ffefd5;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 50%;
+}
+
+.message-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    display: none;
+    z-index: 998;
+}
+
+.message {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    font-size: 1.5em;
+    color: #ff6b81;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: opacity 0.4s ease-out;
+}
+
+.message-container.show {
+    opacity: 1;
+    display: block;
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    color: black;
+}
+
+.lightbox .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2em;
+    color: black;
+    cursor: pointer;
+}
+
+.lightbox img {
+    max-width: 80%;
+    max-height: 60vh;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.lightbox p {
+    font-size: 1em;
+}
+
+.lightbox .prev, .lightbox .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2em;
+    color: black;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.lightbox .prev {
+    left: 20px;
+}
+
+.lightbox .next {
+    right: 20px;
+}
